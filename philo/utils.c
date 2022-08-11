@@ -6,7 +6,7 @@
 /*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 16:35:25 by hhamdy            #+#    #+#             */
-/*   Updated: 2022/08/10 04:39:35 by hhamdy           ###   ########.fr       */
+/*   Updated: 2022/08/11 11:15:50 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,24 @@ void	display_msg(char *msg)
 	exit (1);
 }
 
-void	err_handling(int ac, char **av)
+int	check_n_eat(t_philo *data)
 {
 	int	index;
+	int	flag;
 
-	index = 1;
-	while (index < ac)
+	index = 0;
+	flag = 0;
+	if (data->n_must_eat == -1)
+		return (1);
+	while (index < data->n_philo)
 	{
-		if (!ft_atoi(av[index]) && ft_atoi(av[index]) <= 0)
-			display_msg("Argumets is not valid!\n");
+		if (data->n_eat[index] >= data->n_must_eat)
+			flag++;
 		index++;
 	}
+	if (flag == data->n_must_eat)
+		return (0);
+	return (1);
 }
 
 long long	ft_get_time(void)

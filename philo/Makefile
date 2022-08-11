@@ -6,7 +6,7 @@
 #    By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/02 14:56:27 by hhamdy            #+#    #+#              #
-#    Updated: 2022/08/10 04:48:37 by hhamdy           ###   ########.fr        #
+#    Updated: 2022/08/11 10:15:45 by hhamdy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,9 @@ CFLAGS	=	-Wall -Wextra -Werror #-fsanitize=thread -g
 NAME	=	philo
 
 SRCS	=	philo.c \
-			includes/utils.c \
-			includes/fill_struct.c \
+			utils.c \
+			fill_struct.c \
+			routine.c \
 
 define HEADER_M
            __    _ __                       __                  
@@ -46,8 +47,5 @@ fclean:	clean
 	@echo "\n\033[0;31m</ EVERYTHING HAS BEEN DELETED! >\033[0m\n"
 
 re:		fclean all
-
-norm:
-	norminette
 
 .PHONY:	all clean fclean re

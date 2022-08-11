@@ -6,7 +6,7 @@
 #    By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 04:42:20 by hhamdy            #+#    #+#              #
-#    Updated: 2022/08/10 04:45:46 by hhamdy           ###   ########.fr        #
+#    Updated: 2022/08/10 12:01:47 by hhamdy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,3 +39,11 @@ $(NAME) : $(SRCS)
 
 clean:
 	@rm -rf $(OBGS)
+
+fclean:	clean
+	@rm -rf $(NAME)
+	@echo "\n\033[0;31m</ EVERYTHING HAS BEEN DELETED! >\033[0m\n"
+
+re:		fclean all
+
+.PHONY:	all clean fclean re
