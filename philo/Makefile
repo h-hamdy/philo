@@ -6,7 +6,7 @@
 #    By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/02 14:56:27 by hhamdy            #+#    #+#              #
-#    Updated: 2022/08/11 10:15:45 by hhamdy           ###   ########.fr        #
+#    Updated: 2022/08/16 14:24:47 by hhamdy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS	=	philo.c \
 			utils.c \
 			fill_struct.c \
 			routine.c \
+			ft_usleep.c \
 
 define HEADER_M
            __    _ __                       __                  

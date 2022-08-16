@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_bonus.c                                      :+:      :+:    :+:   */
+/*   ft_usleep_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/13 13:50:24 by hhamdy            #+#    #+#             */
-/*   Updated: 2022/08/15 15:51:58 by hhamdy           ###   ########.fr       */
+/*   Created: 2022/08/14 16:41:32 by hhamdy            #+#    #+#             */
+/*   Updated: 2022/08/15 22:17:54 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
-int	err_handling(int ac, char **av)
+pid_t	ft_fork(void)
 {
-	int	index;
+	pid_t	pid;
 
-	index = 1;
-	while (index < ac)
-	{
-		if (!ft_atoi(av[index]) && ft_atoi(av[index]) <= 0)
-		{
-			display_msg("Argumets is not valid!\n");
-			return (0);
-		}
-		index++;
-	}
-	return (1);
+	pid = fork();
+	if (pid == -1)
+		display_msg("Error while trying to fork.");
+	return (pid);
 }
 
-int	main(int ac, char **av)
+void	ft_usleep(int n_sleep)
 {
-	if (ac > 6 || ac < 5)
-	{
-		display_msg("Number of argument invalid!\n");
-		return (0);
-	}
-	if (!err_handling(ac, av))
-		return (0);
-	alloc_fill_struct(av);
-	return (0);
+	long long	start;
+
+	start = ft_get_time();
+	while (ft_get_time() - start < n_sleep)
+		usleep(100);
 }

@@ -6,7 +6,7 @@
 #    By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 04:42:20 by hhamdy            #+#    #+#              #
-#    Updated: 2022/08/10 12:01:47 by hhamdy           ###   ########.fr        #
+#    Updated: 2022/08/16 14:24:44 by hhamdy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ NAME	=	philo_bonus
 SRCS	=	philo_bonus.c \
 			utils_bonus.c \
 			fill_struct_bonus.c \
+			routine_bonus.c \
+			ft_usleep_bonus.c \
 
 define HEADER_M
            __    _ __                       __                  
@@ -29,6 +31,8 @@ define HEADER_M
 /_/                              /_/                            
 endef
 export HEADER_M
+
+all:	bonus
 
 bonus: $(NAME)
 

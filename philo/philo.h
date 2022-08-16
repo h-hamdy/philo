@@ -6,7 +6,7 @@
 /*   By: hhamdy <hhamdy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:56:24 by hhamdy            #+#    #+#             */
-/*   Updated: 2022/08/11 10:06:42 by hhamdy           ###   ########.fr       */
+/*   Updated: 2022/08/16 08:49:06 by hhamdy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ typedef struct t_philo
 
 void		display_msg(char *msg);
 int			ft_strlen(char *str);
-void		alloc_fill_struct(int ac, char **av);
+void		alloc_fill_struct(char **av, t_philo *data);
 int			ft_atoi(char *str);
 long long	ft_get_time(void);
-int         check_n_eat(t_philo *data);
-void        *routine(void *philo);
-void        ft_usleep(int n_sleep);
+int			check_n_eat(t_philo *data);
+void		*routine(void *philo);
+void		ft_usleep(int n_sleep);
 
 #endif
